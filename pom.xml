@@ -7,8 +7,6 @@
     <artifactId>Frams</artifactId>
     <version>1.0-SNAPSHOT</version>
     <properties>
-        <scalaVersion>2.11.8</scalaVersion>
-        <scalaBinaryVersion>2.11</scalaBinaryVersion>
         <java.version>1.7</java.version>
     </properties>
     <build>
