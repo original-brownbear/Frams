@@ -24,30 +24,49 @@
 
 package io.obrown.frams.util.docker;
 
-import java.io.Closeable;
 import java.io.IOException;
 import java.net.InetAddress;
+import java.net.InetSocketAddress;
+import java.net.Socket;
 
 /**
- * Docker Host Interface.
+ * Docker Host Interface to .
  * @author Armin Braun (me@obrown.io)
  * @version $Id$
  * @since 0.1
  */
-public interface DockerHost extends Closeable {
+public final class DockerHostRemote implements DockerHost {
 
     /**
-     * Sends a raw HTTP request to the Docker host.
-     * @param body Http Request Body
-     * @return Http Response
-     * @throws IOException On Failure
+     * Docker Socket Filesystem Path.
      */
-    String request(String body) throws IOException;
+    private final InetSocketAddress socket;
 
     /**
-     * Returns the {@link InetAddress} to which host forwarded Docker ports are
-     * bound.
-     * @return InetAddress of Host Forwarded Ports
+     * Ctor.
+     * @param socket Docker Host Address
      */
-    InetAddress host();
+    public DockerHostRemote(final InetSocketAddress socket) {
+        this.socket = socket;
+    }
+
+    @Override
+    public String request(final String body) throws IOException {
+        try (final Socket client = new Socket()) {
+            client.connect(this.socket);
+            return "";
+        }
+    }
+
+    @Override
+    public InetAddress host() {
+        return this.socket.getAddress();
+    }
+
+    @Override
+    public void close() {
+        throw new UnsupportedOperationException(
+            "io.obrown.frams.util.docker.DockerHostLocalSocket.close"
+        );
+    }
 }
