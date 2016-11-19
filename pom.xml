@@ -104,5 +104,6 @@
     </build>
     <modules>
         <module>util</module>
+        <module>zookeeper</module>
     </modules>
 </project>
