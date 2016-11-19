@@ -30,7 +30,7 @@ import java.net.InetSocketAddress;
 import java.net.Socket;
 
 /**
- * Docker Host Interface to .
+ * Docker Remote Host.
  * @author Armin Braun (me@obrown.io)
  * @version $Id$
  * @since 0.1
