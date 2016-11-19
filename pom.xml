@@ -3,9 +3,35 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>io.obrown</groupId>
-    <artifactId>Frams</artifactId>
+    <packaging>pom</packaging>
+    <groupId>io.obrown.Frams</groupId>
+    <artifactId>parent</artifactId>
+    <name>Frams</name>
+    <description>
+        Dockerized big data frameworks for Java integration testing.
+    </description>
+    <url>http://obrown.io/Frams</url>
     <version>1.0-SNAPSHOT</version>
+    <licenses>
+        <license>
+            <name>MIT License</name>
+            <url>http://www.opensource.org/licenses/mit-license.php</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+    <developers>
+        <developer>
+            <name>Armin Braun</name>
+            <email>me@obrown.io</email>
+            <organization>Obrown</organization>
+            <organizationUrl>http://www.obrown.io</organizationUrl>
+        </developer>
+    </developers>
+    <scm>
+        <connection>scm:git:git://github.com:original-brownbear/Frams.git</connection>
+        <developerConnection>scm:git:ssh://github.com:original-brownbear/Frams.git</developerConnection>
+        <url>https://github.com/original-brownbear/Frams/tree/master</url>
+    </scm>
     <properties>
         <java.version>1.7</java.version>
     </properties>
